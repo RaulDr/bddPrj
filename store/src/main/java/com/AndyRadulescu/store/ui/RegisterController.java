@@ -1,9 +1,9 @@
 package com.AndyRadulescu.store.ui;
 
-import com.AndyRadulescu.store.StoreApplication;
 import com.AndyRadulescu.store.controller.UserController;
-import de.felixroske.jfxsupport.FXMLController;
+import de.felixroske.jfxsupport.FXMLView;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,16 +11,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.io.IOException;
 
-@FXMLController
-public class RegisterController {
+@FXMLView
+public class RegisterController implements ApplicationContextAware {
     @Autowired
-    UserController userController;
+    private UserController userController;
     @Autowired
     private ApplicationContext context;
 
@@ -41,6 +45,10 @@ public class RegisterController {
 
     @FXML
     void onConfimedClick(ActionEvent event) throws IOException {
+        onRegister(event);
+    }
+
+    private void onRegister(Event event) throws IOException {
         String name = tfName.getText();
         String password = tfPassword.getText();
         String confirmedPassword = tfConfirmPassword.getText();
@@ -51,18 +59,9 @@ public class RegisterController {
         } else {
             lbPropNotDefined.setVisible(false);
             if (password.compareTo(confirmedPassword) == 0) {
-                context.getBean(StoreApplication.class);
                 lbPasswordMissmatch.setVisible(false);
-
                 userController.registerUser(name, password);
-
-                FXMLLoader loader = FXMLLoader.load(getClass().getResource("/fxmlroot/loginController.fxml"));
-                loader.setControllerFactory(context::getBean);
-                Parent rootNode = loader.load();
-                Scene scene = new Scene(rootNode);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                System.out.println("user registered!");
+                loading(event, SavedItems.loginString);
             } else {
                 lbPasswordMissmatch.setVisible(true);
             }
@@ -71,9 +70,36 @@ public class RegisterController {
 
     @FXML
     void onBackClick(ActionEvent event) throws IOException {
-        System.out.println("back pressed !");
-        Parent loader = FXMLLoader.load(getClass().getResource("/fxmlroot/loginController.fxml"));
-        Scene scene = new Scene(loader);
+        loading(event, SavedItems.loginString);
+    }
+
+    private Object createControllerForType(final Class<?> type) {
+        return context.getBean(type);
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        if (this.context != null) {
+            return;
+        }
+        this.context = applicationContext;
+    }
+
+    @FXML
+    void onKeyPressed(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            onRegister(keyEvent);
+        }
+        if (keyEvent.getCode() == KeyCode.ESCAPE) {
+            loading(keyEvent, SavedItems.loginString);
+        }
+    }
+
+    private void loading(Event event, String whereToGo) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlroot/" + whereToGo + "Controller.fxml"));
+        loader.setControllerFactory(this::createControllerForType);
+        Parent rootNode = loader.load();
+        Scene scene = new Scene(rootNode);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
