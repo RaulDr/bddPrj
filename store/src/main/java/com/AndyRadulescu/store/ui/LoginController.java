@@ -92,6 +92,14 @@ public class LoginController implements ApplicationContextAware, SavedItems {
 
     }
 
+    /**
+     * Loads a new Form, and changes the stage.
+     *
+     * @param event     the event from where the source is taken.
+     * @param whereToGo is the string that combined with "Controller.fxml" creates the name
+     *                  of the fxml file, where the application needs to go next.
+     * @throws IOException
+     */
     private void loading(Event event, String whereToGo) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlroot/" + whereToGo + "Controller.fxml"));
         loader.setControllerFactory(this::createControllerForType);

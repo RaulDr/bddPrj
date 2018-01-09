@@ -11,7 +11,4 @@ public interface UserRepository extends CrudRepository<User, Long> {
     User findUserById(long id);
 
     User findUserByUserName(String name);
-
-    @Transactional
-    long deleteUserById(long id);
 }

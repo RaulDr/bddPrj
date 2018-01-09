@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -57,7 +58,9 @@ public class MainController implements ApplicationContextAware, Initializable {
 
     @FXML
     void onKeyPressed(KeyEvent event) throws IOException {
-        loading(event, SavedItems.loginString);
+        if (event.getCode() == KeyCode.ESCAPE) {
+            loading(event, SavedItems.loginString);
+        }
     }
 
     @FXML
@@ -78,10 +81,11 @@ public class MainController implements ApplicationContextAware, Initializable {
     }
 
     /**
-     * Loads the new function stage, where to go.
+     * Loads a new Form, and changes the stage.
      *
-     * @param event
-     * @param whereToGo
+     * @param event     the event from where the source is taken.
+     * @param whereToGo is the string that combined with "Controller.fxml" creates the name
+     *                  of the fxml file, where the application needs to go next.
      * @throws IOException
      */
     private void loading(Event event, String whereToGo) throws IOException {

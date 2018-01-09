@@ -15,5 +15,5 @@ public interface StoreRepository extends CrudRepository<Store, Long> {
     @Transactional
     Store findStoreByName(String name);
 
-    public Set<Store> findAllByUsers(User user);
+    Set<Store> findAllByUsers(User user);
 }
