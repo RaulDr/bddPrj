@@ -51,16 +51,6 @@ public class MainController implements ApplicationContextAware, Initializable {
     private ListView<String> lvStores;
 
     @FXML
-    void onAddPressed(MouseEvent event) {
-
-    }
-
-    @FXML
-    void onRemovePressed(MouseEvent event) {
-
-    }
-
-    @FXML
     void onBackPressed(MouseEvent event) throws IOException {
         loading(event, SavedItems.loginString);
     }
@@ -68,6 +58,11 @@ public class MainController implements ApplicationContextAware, Initializable {
     @FXML
     void onKeyPressed(KeyEvent event) throws IOException {
         loading(event, SavedItems.loginString);
+    }
+
+    @FXML
+    void onCommentsPressed(MouseEvent event) throws IOException {
+        loading(event, SavedItems.commentsString);
     }
 
     private Object createControllerForType(final Class<?> type) {

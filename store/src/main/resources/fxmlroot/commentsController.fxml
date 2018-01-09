@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.AndyRadulescu.store.ui.CommentController">
+   <children>
+      <ListView fx:id="lvComments" layoutX="60.0" layoutY="31.0" prefHeight="200.0" prefWidth="483.0" />
+      <TextField fx:id="tfNewComment" layoutX="60.0" layoutY="257.0" prefHeight="25.0" prefWidth="483.0" />
+      <Button layoutX="255.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onAddComment" text="Add Comment" />
+      <Button layoutX="445.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onBackPressed" text="Back" />
+      <Label fx:id="lbNoComment" layoutX="158.0" layoutY="240.0" text="No comment written, write somethinf first and then pres Add!" textFill="#d70c0c" visible="false" />
+   </children>
+</Pane>
