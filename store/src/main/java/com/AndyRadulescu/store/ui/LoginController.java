@@ -24,11 +24,11 @@ import java.io.IOException;
 
 @FXMLController
 public class LoginController implements ApplicationContextAware, SavedItems {
+    public static User user;
     @Autowired
     private UserController userController;
     @Autowired
     private ApplicationContext context;
-
     @FXML
     private TextField tfPassword;
     @FXML
@@ -38,10 +38,14 @@ public class LoginController implements ApplicationContextAware, SavedItems {
     @FXML
     private Label lbFiledNotCompleted;
 
+    public static User getUser() {
+        return user;
+    }
+
     private void onLogin(Event event) throws IOException {
         String userName = tfUserName.getText();
         String password = tfPassword.getText();
-        User user = userController.getUserByName(userName);
+        user = userController.getUserByName(userName);
         if (userName.compareTo("") != 0 && password.compareTo("") != 0) {
             lbFiledNotCompleted.setVisible(false);
             if (user != null && password.compareTo(user.getPassword()) == 0) {

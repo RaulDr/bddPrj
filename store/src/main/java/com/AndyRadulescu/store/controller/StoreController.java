@@ -5,6 +5,8 @@ import com.AndyRadulescu.store.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class StoreController {
 
@@ -21,5 +23,9 @@ public class StoreController {
         } else {
             return false;
         }
+    }
+
+    public List<Store> getAllStores() {
+        return (List<Store>) storeRepository.findAll();
     }
 }

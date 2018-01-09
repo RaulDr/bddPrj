@@ -1,9 +1,9 @@
 package com.AndyRadulescu.store.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Store {
@@ -14,6 +14,9 @@ public class Store {
     private String name;
     private String address;
     private String description;
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "stores")
+    private Set<User> users = new HashSet<>();
 
     public Store(long id, String name, String address, String description) {
         this.id = id;
@@ -56,5 +59,37 @@ public class Store {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Store store = (Store) o;
+        return id == store.id;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
