@@ -5,7 +5,7 @@ The application simulates the subscription of a user to any kind of store/servic
 in the mongo db as documents "Jsons".
 
 It has a many to many relation between the store and user. To simulate a one to many relation between user and comments, every comment 
-has a field "user_id". This ensures that the linkage between tables.
+has a field "user_id". This ensures that the linkage between tables actually exists.
 
 For the UI, JavaFx has been used,creating everything with scenebuilder.
 
