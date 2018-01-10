@@ -47,7 +47,7 @@ public class CommentController implements ApplicationContextAware, Initializable
     private Label lbNoComment;
 
     @FXML
-    void onAddComment(MouseEvent event) {
+    void onAddComment() {
         onClickKeyPressed();
     }
 
@@ -125,7 +125,6 @@ public class CommentController implements ApplicationContextAware, Initializable
         user = LoginController.getUser();
         ObservableList<String> commentStringList = FXCollections.observableArrayList();
         List<Comment> commentObjectList = commentController.getAllComments(String.valueOf(user.getId()));
-        System.out.println(commentObjectList);
         for (Comment comment : commentObjectList) {
             commentStringList.add(comment.getBody());
         }
