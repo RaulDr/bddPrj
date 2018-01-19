@@ -1,6 +1,6 @@
-package com.AndyRadulescu.store.repository;
+package com.RaulDragoiu.store.repository;
 
-import com.AndyRadulescu.store.mongoModel.Comment;
+import com.RaulDragoiu.store.mongoModel.Comment;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
 <Pane onKeyPressed="#onKeyPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.AndyRadulescu.store.ui.RegisterController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.RaulDragoiu.store.ui.RegisterController">
     <children>
         <Label layoutX="130.0" layoutY="125.0" text="Name:"/>
         <Label layoutX="130.0" layoutY="173.0" text="Password:"/>

@@ -1,4 +1,4 @@
-package com.AndyRadulescu.store.ui;
+package com.RaulDragoiu.store.ui;
 
 /**
  * This interface is used to save the strings for the composition of the fxml file names.

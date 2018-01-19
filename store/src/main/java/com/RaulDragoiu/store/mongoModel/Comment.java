@@ -1,4 +1,4 @@
-package com.AndyRadulescu.store.mongoModel;
+package com.RaulDragoiu.store.mongoModel;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 

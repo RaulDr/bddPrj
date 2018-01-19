@@ -1,4 +1,4 @@
-package com.AndyRadulescu.store;
+package com.RaulDragoiu.store;
 
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
 import javafx.application.Application;

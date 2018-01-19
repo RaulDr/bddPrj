@@ -1,7 +1,7 @@
-package com.AndyRadulescu.store.controller;
+package com.RaulDragoiu.store.controller;
 
-import com.AndyRadulescu.store.model.Store;
-import com.AndyRadulescu.store.repository.StoreRepository;
+import com.RaulDragoiu.store.model.Store;
+import com.RaulDragoiu.store.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

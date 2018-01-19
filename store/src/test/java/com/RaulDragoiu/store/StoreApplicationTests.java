@@ -1,4 +1,4 @@
-package com.AndyRadulescu.store;
+package com.RaulDragoiu.store;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

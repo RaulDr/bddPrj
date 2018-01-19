@@ -1,6 +1,6 @@
-package com.AndyRadulescu.store.repository;
+package com.RaulDragoiu.store.repository;
 
-import com.AndyRadulescu.store.model.User;
+import com.RaulDragoiu.store.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;

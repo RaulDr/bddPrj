@@ -1,6 +1,6 @@
-package com.AndyRadulescu.store.ui;
+package com.RaulDragoiu.store.ui;
 
-import com.AndyRadulescu.store.controller.UserController;
+import com.RaulDragoiu.store.controller.UserController;
 import de.felixroske.jfxsupport.FXMLView;
 import javafx.event.ActionEvent;
 import javafx.event.Event;

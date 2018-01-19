@@ -1,7 +1,7 @@
-package com.AndyRadulescu.store.controller;
+package com.RaulDragoiu.store.controller;
 
-import com.AndyRadulescu.store.mongoModel.Comment;
-import com.AndyRadulescu.store.repository.CommentMongoRepository;
+import com.RaulDragoiu.store.mongoModel.Comment;
+import com.RaulDragoiu.store.repository.CommentMongoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

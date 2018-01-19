@@ -1,9 +1,9 @@
-package com.AndyRadulescu.store.ui;
+package com.RaulDragoiu.store.ui;
 
 
-import com.AndyRadulescu.store.controller.CommentMongoController;
-import com.AndyRadulescu.store.model.User;
-import com.AndyRadulescu.store.mongoModel.Comment;
+import com.RaulDragoiu.store.controller.CommentMongoController;
+import com.RaulDragoiu.store.model.User;
+import com.RaulDragoiu.store.mongoModel.Comment;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

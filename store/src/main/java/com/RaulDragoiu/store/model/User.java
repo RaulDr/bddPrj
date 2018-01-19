@@ -1,4 +1,4 @@
-package com.AndyRadulescu.store.model;
+package com.RaulDragoiu.store.model;
 
 import javax.persistence.*;
 import java.util.Objects;

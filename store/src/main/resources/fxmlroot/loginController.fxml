@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.Pane?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       onKeyPressed="#onEnterPressed" prefHeight="409.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.AndyRadulescu.store.ui.LoginController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.RaulDragoiu.store.ui.LoginController">
     <children>
         <Label layoutX="91.0" layoutY="42.0" text="Log in"/>
         <TextField fx:id="tfUserName" layoutX="215.0" layoutY="103.0"/>

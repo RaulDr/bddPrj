@@ -1,9 +1,9 @@
-package com.AndyRadulescu.store.controller;
+package com.RaulDragoiu.store.controller;
 
-import com.AndyRadulescu.store.model.Store;
-import com.AndyRadulescu.store.model.User;
-import com.AndyRadulescu.store.repository.StoreRepository;
-import com.AndyRadulescu.store.repository.UserRepository;
+import com.RaulDragoiu.store.model.Store;
+import com.RaulDragoiu.store.model.User;
+import com.RaulDragoiu.store.repository.StoreRepository;
+import com.RaulDragoiu.store.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -69,6 +69,7 @@ public class UserController {
         Store store = storeRepository.findStoreByName(storeName);
 
         user.getStores().add(store);
+
 //        store.getUsers().add(user);
 
         userRepository.save(user);

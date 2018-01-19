@@ -1,9 +1,9 @@
-package com.AndyRadulescu.store.ui;
+package com.RaulDragoiu.store.ui;
 
-import com.AndyRadulescu.store.controller.StoreController;
-import com.AndyRadulescu.store.controller.UserController;
-import com.AndyRadulescu.store.model.Store;
-import com.AndyRadulescu.store.model.User;
+import com.RaulDragoiu.store.controller.StoreController;
+import com.RaulDragoiu.store.controller.UserController;
+import com.RaulDragoiu.store.model.Store;
+import com.RaulDragoiu.store.model.User;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;

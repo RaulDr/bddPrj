@@ -4,7 +4,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.Pane?>
 <Pane onKeyPressed="#onKeyPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.AndyRadulescu.store.ui.MainController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.RaulDragoiu.store.ui.MainController">
     <children>
         <Button layoutX="88.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#onBackPressed" text="Back"/>
         <Button layoutX="392.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#onCommentsPressed"
